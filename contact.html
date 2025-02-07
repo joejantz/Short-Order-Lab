@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact</title>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Days+One&family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+
+    <!-- bootstrap and CSS link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="style.css" rel="stylesheet">
+    
+</head>
+<body class="alt-orange">
+
+    <!-- navigation -->
+    <nav class="navbar navbar-expand-md bg-body-tertiary fixed-top">
+        <div class="container">
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <a type="button" class="btn btn-outline- food-btn-sm" href="menu.html">food menu</a>
+                    <button type="button" class="btn-close me-1" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <!-- had to use some javascript on the nav links since 'home' and 'about' are now on the same page. -->
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-between flex-grow-1 align-items-md-center ms-3 ms-md-0 navbar-offcanvas-custom">
+                        <li class="nav-item">
+                            <a class="nav-link" id="nav-home" aria-current="page" href="index.html">home</a>
+                        </li>
+                        <li class="nav-item pt-2 pt-md-0">
+                            <a class="nav-link" id="nav-about" href="index.html#about">about</a>
+                        </li>
+                        <li class="nav-item pt-2 pt-md-0">
+                            <a class="nav-link active" href="contact.html">contact</a>
+                        </li>
+                        <li class="nav-item pt-2 pt-md-0">
+                            <a type="button" class="btn btn-outline- food-btn-md" href="menu.html">food menu</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a type="button" class="btn btn-outline- food-btn-sm" href="menu.html">food menu</a>
+        </div>
+    </nav>
+    
+    <!-- contact form -->
+    <main class="container">
+
+        <section class="py-5 contact b-shadow">
+
+            <!-- header -->
+            <div class="row p-alt pb-4 pt-3">
+                <div class="col-10 col-sm-8 offset-1 offset-sm-2">
+                    <h2 class="p-alt mb-4">CONTACT US</h2>
+                    <p class="p-alt">Please fill out the forum below if you have any questions or feedback for us.</p>
+                </div>
+            </div>
+            <!-- form -->
+            <div class="row pb-5">
+    
+                <div class="col-10 col-sm-8 offset-1 offset-sm-2">
+                    <form id="myForm" onsubmit="return validateForm();">
+                        <div class="mb-3">
+                            <input class="req form-control cust-form" type="text" placeholder="name" aria-label="default input example" onfocus="removeErrorText(this);">
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="req form-control cust-form" placeholder="email address" onfocus="removeErrorText(this);">
+                        </div>
+                        <div class="mb-3">
+                            <input class="req form-control cust-form" type="text" placeholder="subject" aria-label="default input example" onfocus="removeErrorText(this);">
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="req form-control cust-form" placeholder="message..." id="exampleFormControlTextarea1" rows="6" onfocus="removeErrorText(this);"></textarea>
+                        </div>
+                        <div class="form-end">
+                            <button type="submit" class="btn btn-primary cust-button">submit</button>
+                            <div id="badge-success" class="display-none badge success"><i class="bi bi-check-circle-fill me-2"></i>message sent</div>
+                            <div id="badge-error" class="display-none badge error"><i class="bi bi-x-circle-fill me-2"></i>incomplete info</div>
+                        </div>
+                        
+                    </form>
+                </div>
+    
+            </div>
+            <!-- misc info -->
+            <div class="row pb-3">
+                <div class="col-10 col-sm-8 offset-1 offset-sm-2">
+                    <p class="p-alt mb-2">504 Main Street Winnipeg, MB  R3B 3P2</p>
+                    <p class="p-alt mb-2">(204) 631-3400</p>
+                    <p class="p-alt"><a class="email-link" href="mailto:studentservices@rrc.ca">studentservices@rrc.ca</a></p>
+                </div>
+            </div>
+
+        </section>
+        
+    </main>
+
+    <!-- footer -->
+    <div class="container footer-top">
+        <footer class="d-flex flex-wrap justify-content-center align-items-center py-3 mt-5 border-top cust-footer">
+            <p class="col-12 mb-3 text-body-secondary text-center alt-beige-c">© 2025 short order lab, co.</p>
+        </footer>
+    </div>
+
+
+    <!-- bootstrap scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+    <!-- custom script -->
+    <script src="script.js"></script>
+
+</body>
+</html>

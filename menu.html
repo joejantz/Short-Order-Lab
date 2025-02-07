@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Menu</title>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Days+One&family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+
+    <!-- bootstrap and CSS link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+    
+</head>
+<body class="alt-orange">
+    
+    <!-- navigation -->
+    <nav class="navbar navbar-expand-md bg-body-tertiary fixed-top">
+        <div class="container">
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <a type="button" class="btn btn-outline- food-btn-sm cust-active" href="menu.html">food menu</a>
+                    <button type="button" class="btn-close me-1" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <!-- had to use some javascript on the nav links since 'home' and 'about' are now on the same page. -->
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-between flex-grow-1 align-items-md-center ms-3 ms-md-0 navbar-offcanvas-custom">
+                        <li class="nav-item">
+                            <a class="nav-link" id="nav-home" aria-current="page" href="index.html">home</a>
+                        </li>
+                        <li class="nav-item pt-2 pt-md-0">
+                            <a class="nav-link" id="nav-about" href="index.html#about">about</a>
+                        </li>
+                        <li class="nav-item pt-2 pt-md-0">
+                            <a class="nav-link" href="contact.html">contact</a>
+                        </li>
+                        <li class="nav-item pt-2 pt-md-0">
+                            <a type="button" class="btn btn-outline- food-btn-md cust-active" href="menu.html">food menu</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a type="button" class="btn btn-outline- food-btn-sm cust-active" href="menu.html">food menu</a>
+        </div>
+    </nav>
+
+    <!-- food menu -->
+    <main class="container">
+
+        <!-- hours / menu toggler -->
+        <section class="menu-nav mb-3 mb-md-2">
+            <div class="row align-items-center">
+
+                <!-- hours -->
+                <div class="col-12 col-md-6 order-md-2 mb-3 mb-md-0 text-md-end">
+                    <p class="hours">Breakfast hours: 8am - 1pm</p>
+                    <p class="hours">Lunch hours: 1pm - 4pm</p>
+                </div>
+                <!-- togglers - just using some basic js here to turn breakfast and lunch section on and off -->
+                <div class="col-12 col-md-6">
+                    <button onclick="switchMenu('break');" class="btn btn-outline- btn-beige active me-1" id="break-button">breakfast</button>
+                    <button onclick="switchMenu('lunch');" class="btn btn-outline- btn-beige" id="lunch-button">lunch</button>
+                </div>
+    
+            </div>
+        </section>
+
+        <!-- breakfast menu -->
+        <section class="menu b-shadow px-3 py-5" id="breakfast">
+
+            <!-- icon legend -->
+            <div class="row mb-4">
+                <div class="col">
+                    <div class="px-3 p-alt d-flex justify-content-start gap-1">
+                        <span><img class="m-l-icon" src="images/func-vegi.svg" alt="Vegitarian icon"></span>
+                        <span class="m-legend me-4">Vegitarian</span>
+                        <span><img class="m-l-icon" src="images/func-vegan.svg" alt="Vegan icon"></span>
+                        <span class="m-legend">Vegan</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- menu items -->
+            <div class="row row-cols-2 d-flex flex-column m-row-b row-gap-3">
+
+                <div class="col-12 col-md-6">
+                    <div class="con-content-fill px-3 py-1">
+                        <img class="m-img mb-2" src="images/media-b-cafe.jpg" alt="A cafe breakfast.">
+                        <p class="p-alt m-img-p"><em>Cafe Breakfast</em></p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="p-3 m-text">
+                        <p class="p-alt p-m-title pb-2">Omelets – $7.50</p>
+                        <p class="p-alt p-m-body">Served with rye toast</p>
+                        <ul class="p-alt p-m-body m-p-list">
+                            <li>Loaded – Bacon, sausage, scallion, mushroom, tomato, and cheddar</li>
+                            <li>Vegetable Brie – Spinach, mushroom, onion, and brie cheese<span><img class="m-icon" src="images/func-vegi.svg" alt="Vegitarian icon"></span></li>
+                            <li>Denver Omelet – Cheddar, ham, tomato, and scallion</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="p-3 m-text">
+                        <p class="p-alt p-m-title pb-2">Omurice Omelet – $7.50</p>
+                        <p class="p-alt p-m-body">Chicken vegetable fried rice-filled omelet with Kewpie mayo and Tonkatsu ketchup drizzle. Served with a side sesame ginger salad (no toast).</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="p-3 m-text">
+                        <p class="p-alt p-m-title pb-2">Café Breakfast – $6.95</p>
+                        <p class="p-alt p-m-body">Two farm-fresh eggs any style with two strips of bacon, two sausage links, breakfast potatoes, and rye toast.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="p-3 m-text">
+                        <p class="p-alt p-m-title pb-2">Breakfast Club – $6.75</p>
+                        <p class="p-alt p-m-body">Triple decker style, whole wheat bread, fried egg, cheddar cheese, lettuce, tomato, bacon, red onion. Served with breakfast potatoes.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="p-3 m-text">
+                        <p class="p-alt p-m-title pb-2">Eggs Benedict or Florentine Salmon Benedict – $7.50</p>
+                        <p class="p-alt p-m-body">A single poached egg on an English muffin with back bacon or wilted spinach and smoked salmon. Topped with hollandaise sauce. Served with breakfast potatoes and assortment of fresh fruit.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="p-3 m-text">
+                        <p class="p-alt p-m-title pb-2">Grab and Go – $5</p>
+                        <p class="p-alt p-m-body">Over hard egg with back bacon, Bothwell cheddar cheese, red onion, and tomato on an English muffin. Served with breakfast potatoes.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="p-3 m-text">
+                        <p class="p-alt p-m-title pb-2">Breakfast Spring Rolls – $5</p>
+                        <p class="p-alt p-m-body">Crisp spring rolls filled with potato, sausage, bacon, scallion, and cheddar cheese. Served with spicy dip (limited quantities).</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="p-3 m-text">
+                        <p class="p-alt p-m-title pb-2">Breakfast Burrito – $6.25</p>
+                        <p class="p-alt p-m-body">Chorizo sausage, peppers, scrambled egg, scallion, cilantro, black bean spread, Bothwell cheddar, and jalapeño Monterey cheese. Served with house-made salsa and breakfast potatoes.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="p-3 m-text">
+                        <p class="p-alt p-m-title pb-2">Carrot Cake Pancakes – $5.50</p>
+                        <p class="p-alt p-m-body">Sweet and moist pancakes with flax and pecans. Served with cream cheese icing and choice of two bacon strips or two sausage links.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="p-3 m-text">
+                        <p class="p-alt p-m-title pb-2">Customized Steel Cut Oatmeal – $4<span><img class="m-icon" src="images/func-vegi.svg" alt="Vegitarian icon"></span></p>
+                        <p class="p-alt p-m-body">Customized with up to four toppings of your choice. Served with warm milk.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="p-3 m-text pb-0">
+                        <h3 class="m-h">Extras</h3>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="p-3 m-text">
+                        <p class="p-alt p-m-title m-text-extras pb-1">Rye Toast – $3<br>Single Egg – $1.50<br>Breakfast Potatoes – $3<span><img class="m-icon" src="images/func-vegan.svg" alt="Vegan icon"></span><br>Assortment of Fresh Fruit – $3</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="con-content-fill px-3 py-1">
+                        <img class="m-img mb-2" src="images/media-b-burrito.jpg" alt="A breakfast burrito.">
+                        <p class="p-alt m-img-p"><em>Breakfast Burrito</em></p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- lunch menu -->
+        <section class="menu b-shadow px-3 py-5 menu-disabled" id="lunch">
+
+            <!-- icon legend -->
+            <div class="row mb-4">
+                <div class="col">
+                    <div class="px-3 p-alt d-flex justify-content-start gap-1">
+                        <span><img class="m-l-icon" src="images/func-vegi.svg" alt="Vegitarian icon"></span>
+                        <span class="m-legend me-4">Vegitarian</span>
+                        <span><img class="m-l-icon" src="images/func-vegan.svg" alt="Vegan icon"></span>
+                        <span class="m-legend">Vegan</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-cols-2 d-flex flex-column m-row-l row-gap-3">
+
+                <div class="col-12 col-md-6">
+                    <div class="con-content-fill px-3 py-1">
+                        <img class="m-img mb-2" src="images/media-l-burger.jpg" alt="A gourmet burger.">
+                        <p class="p-alt m-img-p"><em>The 504 Burger</em></p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="p-3 m-text">
+                        <p class="p-alt p-m-title pb-2">Lunch Special – $9</p>
+                        <p class="p-alt p-m-body">Ask about today’s feature. Subject to availability.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="p-3 m-text pb-0">
+                        <h3 class="m-h">Salads</h3>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="p-3 m-text">
+                        <p class="p-alt p-m-title pb-2">Santa Fe Caesar – $6</p>
+                        <p class="p-alt p-m-body">Crisp romaine with Mexican-inspired dressing, grated parmesan, and tortilla crisps. Add warmed grilled chicken for $3.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="p-3 m-text pb-0">
+                        <h3 class="m-h">Lunch Plates</h3>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="p-3 m-text">
+                        <p class="p-alt p-m-title pb-2">Clubhouse Sandwich – $10</p>
+                        <p class="p-alt p-m-body">House-roasted turkey breast, bacon, vine ripened tomatoes, and shaved lettuce. Served on toasted whole wheat.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="p-3 m-text">
+                        <p class="p-alt p-m-title pb-2">Rueben – $9.50</p>
+                        <p class="p-alt p-m-body">Corned beef, sauerkraut, dressing, and Bothwell Swiss cheese. Choice of open-faced or closed.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="p-3 m-text">
+                        <p class="p-alt p-m-title pb-2">The 504 Burger – $10</p>
+                        <p class="p-alt p-m-body">1/4-pound patty with “Carolina Cheese Caviar”, shaved lettuce, herb mayo, and crispy onion.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="p-3 m-text">
+                        <p class="p-alt p-m-title pb-2">Mushroom Swiss Burger – $10</p>
+                        <p class="p-alt p-m-body">1/4-pound patty with roasted garlic mayo, caramelized onion and mushroom blend, Swiss cheese, lettuce, and tomato.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="p-3 m-text">
+                        <p class="p-alt p-m-title pb-2">Fish and Chips – $9.50</p>
+                        <p class="p-alt p-m-body">Beer battered pickerel pieces, crisp coleslaw, and tartar sauce.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="p-3 m-text">
+                        <p class="p-alt p-m-title pb-2">Deli Chicken Fingers – $9.50</p>
+                        <p class="p-alt p-m-body">Crispy buttermilk chicken tenders with honey dill and crisp coleslaw.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="p-3 m-text">
+                        <p class="p-alt p-m-title pb-2">Cuban Sandwich Melt – $9.50</p>
+                        <p class="p-alt p-m-body">Honey ham, shaved roast pork, Genoa salami, Manitoba Smak Dab mustard, pickles, and Bothwell Swiss.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="p-3 m-text">
+                        <p class="p-alt p-m-title pb-2">East Meets West Poutine – $9.50</p>
+                        <p class="p-alt p-m-body">House fries topped with Bothwell curds, provolone, gravy, Gochujang sauce glazed popcorn chicken, kimchi style slaw, and wasabi sesame seeds.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="p-3 m-text">
+                        <p class="p-alt p-m-title pb-2">Pork Banh Mi Sandwich – $9.50</p>
+                        <p class="p-alt p-m-body">Shaved roast pork, pate, sriracha mayo, cucumber slices, pickled vegetables, cilantro, and lime.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="p-3 m-text">
+                        <p class="p-alt p-m-title pb-2">Steak and Mushroom Omelet – $8.50</p>
+                        <p class="p-alt p-m-body">Three egg omelet filled with grilled sirloin, mushroom, onion, and Bothwell smoked gouda cheese. Topped with chimichurri sauce.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="p-3 m-text">
+                        <p class="p-alt p-m-title pb-2">Chicken Quesadilla – $9</p>
+                        <p class="p-alt p-m-body">Grilled chicken, peppers, scallion, cilantro, corn, and Bothwell jalapeño Monterey and cheddar cheese. Served with house-made salsa and sour cream. (Vegetarian without chicken)</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="p-3 m-text">
+                        <p class="p-alt p-m-title pb-2">Goat Cheese Quesadilla – $8.50<span><img class="m-icon" src="images/func-vegi.svg" alt="Vegitarian icon"></span></p>
+                        <p class="p-alt p-m-body">Tortilla, caramelized onion and triple mushroom, spinach, goat cheese, cheddar, and Monterey cheese with roasted red pepper coulis dip. (Vegetarian)</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="p-3 m-text pb-0">
+                        <h3 class="m-h">Extras</h3>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="p-3 m-text">
+                        <p class="p-alt p-m-title m-text-extras pb-1">Crisp Onion Rings – $4<br>Substitute Onion Rings for Fries – $2<br>House-made Peppered Fries – $4<br>Gravy – $1.50<br>Two Bacon Strips for Burger – $2</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="con-content-fill px-3 py-1">
+                        <img class="m-img mb-2" src="images/media-l-fish.jpg" alt="A plate of fish and chips">
+                        <p class="p-alt m-img-p"><em>Fish and Chips</em></p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- footer -->
+    <div class="container footer-top">
+        <footer class="d-flex flex-wrap justify-content-center align-items-center py-3 mt-5 border-top cust-footer">
+            <p class="col-12 mb-3 text-body-secondary text-center alt-beige-c">© 2025 short order lab, co.</p>
+        </footer>
+    </div>
+
+    <!-- bootstrap scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+    <!-- custom script -->
+    <script src="script.js"></script>
+
+</body>
+</html>

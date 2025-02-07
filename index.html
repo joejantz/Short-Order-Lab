@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Short Order Lab</title>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Days+One&family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+
+    <!-- bootstrap and CSS link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+
+    <!-- All images sourced from Adobe Stock and Pexels.com -->
+
+</head>
+<body>
+
+    <!-- navigation -->
+    <nav class="navbar navbar-expand-md bg-body-tertiary fixed-top">
+        <div class="container">
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <a type="button" class="btn btn-outline- food-btn-sm" href="menu.html">food menu</a>
+                    <button type="button" class="btn-close me-1" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <!-- <button type="button" class="btn btn-outline- food-btn-sm" href="menu.html">food menu</button> -->
+                </div>
+                <!-- had to use some javascript on the nav links since 'home' and 'about' are now on the same page. -->
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-between flex-grow-1 align-items-md-center ms-3 ms-md-0 navbar-offcanvas-custom">
+                        <li class="nav-item">
+                            <a onclick="closeOffCanvas()" class="nav-link active" id="nav-home" aria-current="page" href="index.html">home</a>
+                        </li>
+                        <li class="nav-item pt-2 pt-md-0">
+                            <a onclick="closeOffCanvas()" class="nav-link" id="nav-about" href="index.html#about">about</a>
+                        </li>
+                        <li class="nav-item pt-2 pt-md-0">
+                            <a class="nav-link" href="contact.html">contact</a>
+                        </li>
+                        <li class="nav-item pt-2 pt-md-0">
+                            <a type="button" class="btn btn-outline- food-btn-md" href="menu.html">food menu</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a type="button" class="btn btn-outline- food-btn-sm" href="menu.html">food menu</a>
+        </div>
+    </nav>
+
+
+    <main class="container">
+
+        <!-- hero page -->
+        <!-- used a css grid for this because it reacted the best at different sizes, 
+            it may seem a little hacky, but I found this was the most functional compared to bootstrap grids,
+            bootstrap CSS grids, and stardard CSS-->
+        <div class="hero" id="hero">
+            <h1 class="hero-text hero-text-short">SHORT</h1>
+            <h1 class="hero-text hero-text-order">ORDER</h1>
+            <h1 class="hero-text hero-text-lab">L<span class="hero-kern">0</span>AB</h1>
+
+            <img class="hero-img" src="images/func-heroImage.png" alt="A gourmet burger.">
+            <div class="hero-bg-container">
+                <div class="hero-img-bg b-shadow"></div>
+            </div>
+        </div>
+
+        <!-- about section -->
+        <!-- ended up moving the about section into the main page, as you suggested, 
+        I think this makes more sense overall, 
+        with the small trade-off that the nav links aren't one-to-one with the html pages anymore. -->
+        <section class="cust-con py-3 b-shadow" id="about">
+            <div class="row px-4 py-5 px-sm-5 text-center">
+                <h2>ABOUT SHORT ORDER LAB</h2>
+            </div>
+            <div class="row px-4 px-sm-5 pb-5">
+                <div class="col-12 col-md-6 col-lg-5 offset-lg-1 mb-3 mb-md-0 co">
+                    <div class="con-content con-content-fill">
+                        <img src="images/media-about.jpg" alt="A chef cooking with coworkers.">
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-5 pt-2 pt-md-0">
+                    <div class="con-content">
+                        <p class="mb-4">
+                            Located at Red River College Polytechnic’s Culinary Exchange, Short Order Lab offers various breakfeast, lunch and dinner items prepared by students in the Culinary Arts program at Red River’s GlobalFoods Institute.
+                        </p>
+                        <p>
+                            Reservations are not required or available for any of our meals served!
+                        </p>
+                    </div>
+                </div>
+            </row>
+        </section>
+
+        <!-- map section -->
+        <section class="cust-con py-3 b-shadow">
+            <!-- location / hours -->
+            <div class="row px-4 py-5 px-sm-5">
+                <div class="col-10 col-sm-6 text-start mb-5 mb-sm-0">
+                    <h2 class="mb-3">LOCATION</h2>
+                    <p class="mb-1">504 Main Street</p>
+                    <p>Winnipeg, MB  R3B 3P2</p>
+                </div>
+                <div class="col-10 col-sm-6 text-start">
+                    <h2 class="mb-3">HOURS</h2>
+                    <p class="mb-1">8am - 4pm</p>
+                    <p>Closed on Saturday and Sunday</p>
+                </div>
+            </div>
+            <!-- map -->
+            <div class="row px-4 px-sm-5 pb-5">
+                <div class="col-12 mb-5 co">
+                    <div class="con-content con-content-fill">
+                        <img class="img-map" src="images/func-map.jpg" alt="A map of downtown Winnipeg.">
+                    </div>
+                </div>
+                <div class="col-12 pt-2 pt-md-0">
+                    <p>Looking for our menu? <a href="menu.html" class="cus-link">Click here!</a></p>
+                </div>
+            </row>
+        </section>
+
+    </main>
+
+    <!-- footer -->
+    <div class="container pt-0 pt-sm-2">
+        <footer class="d-flex flex-wrap justify-content-center align-items-center py-3 mt-5 border-top">
+            <p class="col-12 mb-3 text-body-secondary text-center">© 2025 short order lab, co.</p>
+        </footer>
+    </div>
+
+
+    <!-- bootstrap scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+    <!-- custom script -->
+    <script src="script.js"></script>
+
+</body>
+</html>
